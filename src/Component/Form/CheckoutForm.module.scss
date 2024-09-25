@@ -1,0 +1,55 @@
+.checkout-form {
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+.form {
+  flex: 2;
+  .form-control {
+    margin-bottom: 15px;
+    label,
+    input {
+      display: block;
+    }
+    label {
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    input {
+      width: 100%;
+      padding: 5px;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+  }
+}
+.info {
+  flex: 1;
+  .name,
+  span {
+    font-size: 0.8rem;
+    letter-spacing: -1px;
+  }
+  .name {
+    flex: 1;
+    font-weight: bold;
+
+    // letter-spacing: 0.1px;
+  }
+}
+.form-actions {
+  button {
+    padding: 5px 20px;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,73 @@
+.cart-list h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.cart-table {
+  flex: 2;
+  font-size: 0.8em;
+  width: 100%;
+  margin-right: 20px;
+  table {
+    width: 100%;
+  }
+  th,
+  td {
+    width: 15%;
+    padding: 5px 3px;
+  }
+  th {
+    padding: 10px 3px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+  svg {
+    color: #ccc;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
+}
+.cart-info {
+  flex: 1;
+  font-size: 0.8rem;
+}
+.cart-actions {
+  .cart-form-control {
+    input {
+      display: inline-block;
+      width: 100%;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  button {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+  }
+}
+.navigates {
+  color: var(--black-color);
+  svg {
+    color: var(--black-color);
+  }
+  &:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+}

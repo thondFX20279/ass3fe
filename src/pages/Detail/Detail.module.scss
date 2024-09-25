@@ -1,0 +1,38 @@
+.item-img {
+  flex: 1;
+  img {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+.item-info {
+  flex: 1;
+  .short-desc {
+    font-size: 0.8em;
+  }
+  .actions {
+    input {
+      padding: 3px 5px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.item-description {
+  .long-desc {
+    color: #b2acac;
+    font-size: 0.6rem;
+    p {
+      margin-bottom: 5px;
+    }
+    & p:first-child {
+      text-transform: uppercase;
+    }
+  }
+}
+.related {
+  display: grid;
+  grid-template-columns: repeat(1, 200px);
+}

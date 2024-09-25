@@ -1,0 +1,15 @@
+.title {
+  margin-bottom: 20px;
+  p {
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+}
+.products-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}

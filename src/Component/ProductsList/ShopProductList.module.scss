@@ -1,0 +1,19 @@
+.content {
+  flex: 1;
+}
+
+.search {
+  input {
+    padding: 3px 5px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  .item {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,17 @@
+.banner {
+  position: relative;
+  .banner-img {
+    img {
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+    }
+  }
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    max-width: 30%;
+    transform: translateY(-50%);
+  }
+}

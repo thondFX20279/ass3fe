@@ -1,0 +1,14 @@
+.card {
+  position: absolute;
+  z-index: 200;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  border-radius: 5px;
+  padding: 40px;
+  margin: 0 auto;
+  background-color: var(--white-color);
+  box-shadow: 0 0 10px 2px rgba($color: #000000, $alpha: 0.3);
+  width: 400px;
+}

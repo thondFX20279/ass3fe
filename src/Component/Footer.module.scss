@@ -1,0 +1,13 @@
+.text-gray {
+  a {
+    color: var(--gray-color);
+  }
+}
+.footer {
+  background-color: var(--black-color);
+}
+.footer a {
+  &:hover {
+    text-decoration: underline;
+  }
+}

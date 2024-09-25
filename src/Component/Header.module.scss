@@ -1,0 +1,19 @@
+.cart,
+.login {
+  svg {
+    color: var(--gray-color);
+  }
+}
+.cart {
+  margin-right: 15px;
+}
+.header a {
+  color: black;
+}
+.header a:hover {
+  transform: scale(1.1);
+}
+
+.header a.active {
+  color: orange;
+}

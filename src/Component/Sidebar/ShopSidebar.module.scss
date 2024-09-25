@@ -1,0 +1,26 @@
+.sidebar {
+  min-width: 200px;
+  margin-right: 30px;
+  .sidebar-nav {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
+.items {
+  list-style-type: none;
+  padding-left: 0;
+  li {
+    padding: 5px 15px;
+  }
+  li.item {
+    color: #ccc;
+    text-transform: capitalize;
+    &:hover {
+      cursor: pointer;
+      color: rgba(241, 165, 24, 0.774);
+    }
+  }
+  li.active {
+    color: rgb(210, 167, 86);
+  }
+}

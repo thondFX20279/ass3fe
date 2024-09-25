@@ -1,0 +1,41 @@
+.chat-window {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  top: -70px;
+  border: none;
+  outline: none;
+  border-radius: 9px;
+  background-color: white;
+  box-shadow: 2px 2px 15px black;
+  overflow: hidden;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.form {
+  height: 50px;
+  border-top: 1px solid #ccc;
+  background-color: #cccccc54;
+  display: flex;
+  align-items: center;
+  input {
+    border: none;
+    padding: 3px 5px;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  button {
+    border: none;
+    margin-left: 10px;
+  }
+}
