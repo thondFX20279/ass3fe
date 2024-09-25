@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL,
+  baseURL: "https://ass3be.onrender.com/",
   timeout: 3000,
   withCredentials: true,
 });
