@@ -4,6 +4,7 @@ import Card from "../../utils/Card";
 import { Link, useNavigate } from "react-router-dom";
 import axiosClient from "../../api/axiosClient";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 // variable
 const cx = classNames.bind(classes);
 
@@ -11,7 +12,7 @@ const cx = classNames.bind(classes);
 
 const RegisterForm = () => {
   const navigate = useNavigate();
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     register,
     handleSubmit,
@@ -19,6 +20,7 @@ const RegisterForm = () => {
     formState: { errors },
   } = useForm();
   const submitHandler = async (data) => {
+    setIsSubmitting(true);
     try {
       const res = await axiosClient.post("/auth/signup", data);
       if (res.status === 201) {
@@ -33,6 +35,7 @@ const RegisterForm = () => {
         alert("Something went wrong");
       }
     }
+    setIsSubmitting(false);
   };
 
   const loginHandler = (e) => {
@@ -97,7 +100,7 @@ const RegisterForm = () => {
           {errors.confirmPassword && <p style={{ color: "red" }}>{errors.confirmPassword.message}</p>}
         </div>
         <div className={cx("form-actions")}>
-          <button type="submit" className="btn btn-dark">
+          <button type="submit" className="btn btn-dark" disabled={isSubmitting}>
             SIGN UP
           </button>
         </div>

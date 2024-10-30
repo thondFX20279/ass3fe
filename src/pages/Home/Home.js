@@ -10,19 +10,27 @@ const Home = () => {
 
   useEffect(() => {
     const getCategories = async () => {
-      const res = await productApi.getCategories();
-      if (res.data.success === true) {
-        setCategories(res.data.categories);
-      } else {
-        setCategories([]);
+      try {
+        const res = await productApi.getCategories();
+        if (res.data.success === true) {
+          setCategories(res.data.categories);
+        } else {
+          setCategories([]);
+        }
+      } catch (error) {
+        alert(error.message);
       }
     };
     const getTopTrending = async () => {
-      const res = await productApi.getTopTrending();
-      if (res.data.success === true) {
-        setTopTrengding(res.data.topTrending);
-      } else {
-        setTopTrengding([]);
+      try {
+        const res = await productApi.getTopTrending();
+        if (res.data.success === true) {
+          setTopTrengding(res.data.topTrending);
+        } else {
+          setTopTrengding([]);
+        }
+      } catch (error) {
+        alert(error.message);
       }
     };
     getCategories();

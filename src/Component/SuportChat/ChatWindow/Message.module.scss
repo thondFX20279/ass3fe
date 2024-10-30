@@ -1,0 +1,29 @@
+.message-wrapper {
+  display: flex;
+  margin-bottom: 10px; // Khoảng cách giữa các tin nhắn
+
+  &.left {
+    justify-content: flex-start; // Căn trái cho tin nhắn của người khác
+  }
+
+  &.right {
+    justify-content: flex-end; // Căn phải cho tin nhắn của người dùng
+  }
+}
+
+.message {
+  padding: 5px 10px; // Khoảng cách bên trong tin nhắn
+  border-radius: 10px; // Bo tròn góc
+  max-width: 70%; // Chiều rộng tối đa
+  word-wrap: break-word; // Ngăn nội dung bị tràn
+  color: black; // Màu chữ
+
+  // Thay đổi màu nền cho tin nhắn của người dùng và người khác
+}
+.message.left {
+  background-color: #0084ff;
+}
+.message.right {
+  background-color: #e0e0e0; // Màu nền cho tin nhắn của người khác
+  color: black; // Màu chữ cho tin nhắn của người khác
+}

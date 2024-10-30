@@ -6,11 +6,13 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/usersSlice";
 import { cartActions } from "../../store/cartSlice";
+import { useState } from "react";
 // variable
 const cx = classNames.bind(classes);
 
 // component
 const LoginForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -23,6 +25,7 @@ const LoginForm = () => {
 
   // Xử lý submit form
   const submitHandler = async (data) => {
+    setIsSubmitting(true);
     const action = await dispatch(login(data));
     if (login.fulfilled.match(action)) {
       dispatch(cartActions.login(action.payload.user));
@@ -30,6 +33,7 @@ const LoginForm = () => {
     } else {
       alert(action.payload);
     }
+    setIsSubmitting(false);
   };
 
   return (
@@ -68,7 +72,7 @@ const LoginForm = () => {
 
         {/* Submit Button */}
         <div className={cx("form-actions")}>
-          <button type="submit" className="btn btn-dark">
+          <button type="submit" disabled={isSubmitting} className="btn btn-dark">
             Login
           </button>
         </div>

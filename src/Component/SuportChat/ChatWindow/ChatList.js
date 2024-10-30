@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Message from "./Message";
-
 const ChatList = ({ chatList }) => {
   const endOfMessagesRef = useRef(null);
-
   useEffect(() => {
     scrollToBottom();
   }, [chatList]);

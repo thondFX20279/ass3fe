@@ -7,11 +7,15 @@ import { useDispatch } from "react-redux";
 const Cart = () => {
   const dispatch = useDispatch();
   const getCart = async () => {
-    const res = await cartApi.getCart();
-    if (res.data.success) {
-      setCartData(res.data.cart);
-    } else {
-      setCartData({ items: [], totalPrice: 0 });
+    try {
+      const res = await cartApi.getCart();
+      if (res.data.success) {
+        setCartData(res.data.cart);
+      } else {
+        setCartData({ items: [], totalPrice: 0 });
+      }
+    } catch (error) {
+      alert(error.message);
     }
   };
   const [cartData, setCartData] = useState({ items: [], totalPrice: 0 });
