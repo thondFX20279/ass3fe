@@ -66,7 +66,13 @@ const RegisterForm = () => {
             type="text"
             id="email"
             name="email"
-            {...register("email", { required: "Email is required", pattern: "" })}
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: "Please enter a valid email address",
+              },
+            })}
           />
           {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
         </div>
