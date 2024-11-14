@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import orderApi from "../../api/orderApi";
 import { cartActions } from "../../store/cartSlice";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // variable
 const cx = classNames.bind(classes);
@@ -13,6 +14,7 @@ const cx = classNames.bind(classes);
 const CheckoutForm = ({ cart }) => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   // Sử dụng react-hook-form
   const {
@@ -35,6 +37,7 @@ const CheckoutForm = ({ cart }) => {
       const res = await orderApi.createOrders({ ...data, email: user.email, totalPrice: cart.totalPrice });
       if (res.data.success) {
         dispatch(cartActions.clearCart());
+        navigate("/orders");
       }
     } catch (error) {
       if (error.response) {
