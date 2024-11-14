@@ -7,6 +7,8 @@ const cx = classNames.bind(classes);
 const OrderDetail = () => {
   const { orderId } = useParams();
   const [order, setOrder] = useState({});
+  console.log("order: ", order);
+
   useEffect(() => {
     const getOrder = async () => {
       try {
@@ -17,6 +19,8 @@ const OrderDetail = () => {
           setOrder({});
         }
       } catch (error) {
+        console.log(error);
+
         if (error.response) {
           alert(error.response.data.message);
         }

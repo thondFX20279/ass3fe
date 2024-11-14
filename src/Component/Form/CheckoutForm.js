@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import orderApi from "../../api/orderApi";
 import { cartActions } from "../../store/cartSlice";
+import { useState } from "react";
 
 // variable
 const cx = classNames.bind(classes);
@@ -12,7 +13,7 @@ const cx = classNames.bind(classes);
 const CheckoutForm = ({ cart }) => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
+  const [isLoading, setIsLoading] = useState(false);
   // Sử dụng react-hook-form
   const {
     register,
@@ -29,6 +30,7 @@ const CheckoutForm = ({ cart }) => {
 
   // Submit handler
   const onSubmit = async (data) => {
+    setIsLoading(true);
     try {
       const res = await orderApi.createOrders({ ...data, email: user.email, totalPrice: cart.totalPrice });
       if (res.data.success) {
@@ -39,6 +41,7 @@ const CheckoutForm = ({ cart }) => {
         alert(error.response.data.message);
       }
     }
+    setIsLoading(false);
   };
 
   // add "." in price
@@ -110,7 +113,7 @@ const CheckoutForm = ({ cart }) => {
 
             {/* actions */}
             <div className={cx("form-actions")}>
-              <button className="btn btn-dark rounded-0" type="submit">
+              <button className="btn btn-dark rounded-0" disabled={isLoading} type="submit">
                 Place order
               </button>
             </div>
