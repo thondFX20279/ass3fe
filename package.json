@@ -1,8 +1,8 @@
 {
-  "name": "assignment3",
+  "name": "shop-app-1133131",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "https://shop-app-1133131.netlify.app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
